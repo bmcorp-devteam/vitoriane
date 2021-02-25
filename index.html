@@ -781,5 +781,53 @@ Muse.Utils.transformMarkupToFixBrowserProblems();/* body */
 </script>
   <!-- RequireJS script -->
   <script src="scripts/require.js?crc=7928878" type="text/javascript" async data-main="scripts/museconfig.js?crc=310584261" onload="if (requirejs) requirejs.onError = function(requireType, requireModule) { if (requireType && requireType.toString && requireType.toString().indexOf && 0 <= requireType.toString().indexOf('#scripterror')) window.Muse.assets.check(); }" onerror="window.Muse.assets.check();"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+        
+        //INTEGRAÇÃO KAZAH
+        $('.submit-btn').on("click", function () {
+
+            var _this = $('form.form-grp');
+                
+            var data = {
+                'Token': 'e826c04c-14ad-4de5-9e7e-40b5a38a06a7',
+                'Nome': $("[name=custom_U4509]").val(),
+                'Email': $("[name=Email]").val(),
+                'Conversao': 'Contato Site',
+                'Mensagem': $("[name=custom_U4517]").val(),
+                'Celular': $("[name=custom_U4522]").val(),
+                'Telefone': $("[name=custom_U4522]").val(),
+                'DataEvento': $("[name=date-57]").val(),
+                'TipoEvento': $("[name=menu-675]").val(),
+                'Pax': $("[name=number-523]").val(),
+                'Origem': 'Site',
+                'Tags': 'EspacoVitoriane',
+            }
+
+            console.log(data);
+
+            $.ajax({
+                cache: false,
+                type: "POST",
+                url: "https://api.kazah.com.br/apiv1/lead",
+                data: data,
+                dataType: "HTML",
+                success: function (data) {
+                    console.log("Contato cadastrado com sucesso!");
+                    _this.unbind('submit').submit();
+                    window.location.href = "http://espacovitoriane.com.br/";
+                    window.location.reload();
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    console.log("Erro ao cadastrar contato:", thrownError);
+                    _this.unbind('submit').submit();
+                }
+            });
+        });
+
+    });
+
+</script>
    </body>
 </html>
