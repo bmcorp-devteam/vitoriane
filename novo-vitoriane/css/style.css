@@ -9151,6 +9151,19 @@ img {
     z-index: 10;
 }
 
+/* Some Styles Default */
+.bg-blue-vitoriane{
+    background-color: #212f56;
+}
+
+.w-45{
+    width: 45%;    
+}
+
+.w-83{
+    width: 83%;
+}
+
 /* Section Banners - Slide */
 .text-slide-banner{
     display: none !important;
@@ -10027,6 +10040,11 @@ img {
 
     #section-portfolio .sq-item h3{
         margin: -12% 0px -8%;
+    }
+
+    /* Section Carousel Events */
+    .container-carousel-events .carousel{
+        width: 100%;
     }
 
     /* Footer */
