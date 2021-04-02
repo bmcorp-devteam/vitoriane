@@ -9164,6 +9164,11 @@ img {
     width: 83%;
 }
 
+.border-slider{
+    border: 2px solid #f3d6b4;
+    border-radius: 10px;
+}
+
 /* Section Banners - Slide */
 .text-slide-banner{
     display: none !important;
